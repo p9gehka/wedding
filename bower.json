@@ -1,0 +1,17 @@
+{
+  "name": "wedding",
+  "description": "",
+  "main": "",
+  "license": "MIT",
+  "homepage": "",
+  "dependencies": {
+    "jquery-1.9.1": "http://code.jquery.com/jquery-1.9.1.js"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
