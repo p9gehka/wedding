@@ -1,61 +1,46 @@
-body{
-	background:#ccc;
-}
-#book{
-	margin: 0 auto;
-}
-#book .turn-page{
-	background-color:white;
-}
-#book .cover{
-	background: url(assets/book.jpg) no-repeat left top;
-	background-size: 100% 100%;
-}
-}
-#book .cover h1{
-	color:white;
-	text-align:center;
-	font-size:50px;
-	line-height:500px;
-	margin:0px;
-}
-#book .loader{
-	background-image:url(loader.gif);
-	width:24px;
-	height:24px;
-	display:block;
-	position:absolute;
-	top:238px;
-	left:188px;
-}
-#book .data{
-	text-align:center;
-	font-size:40px;
-	color:#999;
-	line-height:500px;
-}
-#controls{
-	width:800px;
-	text-align:center;
-	margin:20px 0px;
-	font:30px arial;
-}
-#controls input, #controls label{
-	font:30px arial;
-}
-#book .odd{
-	background-image:-webkit-linear-gradient(left, #FFF 95%, #ddd 100%);
-	background-image:-moz-linear-gradient(left, #FFF 95%, #ddd 100%);
-	background-image:-o-linear-gradient(left, #FFF 95%, #ddd 100%);
-	background-image:-ms-linear-gradient(left, #FFF 95%, #ddd 100%);
-}
-#book .even{
-	background-image:-webkit-linear-gradient(right, #FFF 95%, #ddd 100%);
-	background-image:-moz-linear-gradient(right, #FFF 95%, #ddd 100%);
-	background-image:-o-linear-gradient(right, #FFF 95%, #ddd 100%);
-	background-image:-ms-linear-gradient(right, #FFF 95%, #ddd 100%);
+body {
+	font-size: small;
+	font-family: sans-serif;
+	  
 }
 
-.cover {
-	background-image: url(assets/book.jpg) no-repeat top left 100% 100%;
+/*
+.game {
+	width: 80%;
+	max-width: 1024px;
+	height: 500px;
+	margin: 0 auto;
+	background:url(assets/game.jpg);
+	position: relative;
+	cursor: pointer;
+}
+
+.coin {
+	width: 40px;
+	height: 40px;
+	background: url(assets/coin.jpg) no-repeat -7px -3px;
+	background-size: 130% 125%;
+	border-radius: 50%;
+	padding: 0;
+	position: absolute;
+}
+.score {
+	position: absolute;
+	font-size: 3em;
+	color: #fff;
+	right: 5px;
+}
+.time {
+	position: absolute;
+	font-size: 3em;
+	color: #fff;
+	width: 60px;
+}
+.coins {
+	position: absolute;
+	left: 0; top: 0; right: 0; bottom: 0;
+}*/
+
+.a {
+	
 }

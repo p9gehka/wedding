@@ -1,47 +1,72 @@
-	var numberOfPages = 1000; 
-	// Adds the pages that the book will need
-	function addPage(page, book) {
-		// 	First check if the page is already in the book
-		if (!book.turn('hasPage', page)) {
-			// Create an element for this page
-			var element = $('<div />', {'class': 'page '+((page%2==0) ? 'odd' : 'even'), 'id': 'page-'+page}).html('<i class="loader"></i>');
-			// If not then add the page
-			book.turn('addPage', element, page);
-			// Let's assum that the data is comming from the server and the request takes 1s.
-			setTimeout(function(){
-					element.html('<div class="data">Data for page '+page+'</div>');
-			}, 1000);
-		}
+!
+class Point {
+	constructor(x, y) {
+		this.X = x;
+		this.Y = y;
 	}
-	$(window).ready(function(){
-		$('#book').turn({acceleration: true,
-							pages: numberOfPages,
-							elevation: 50,
-							gradients: !$.isTouch,
-							when: {
-								turning: function(e, page, view) {
-									// Gets the range of pages that the book needs right now
-									var range = $(this).turn('range', page);
-									// Check if each page is within the book
-									for (page = range[0]; page<=range[1]; page++) 
-										addPage(page, $(this));
-								},
-								turned: function(e, page) {
-									$('#page-number').val(page);
-								}
-							}
-						});
-		$('#number-pages').html(numberOfPages);
-		$('#page-number').keydown(function(e){
-			if (e.keyCode==13)
-				$('#book').turn('page', $('#page-number').val());
-				
-		});
-	});
-	$(window).bind('keydown', function(e){
-		if (e.target && e.target.tagName.toLowerCase()!='input')
-			if (e.keyCode==37)
-				$('#book').turn('previous');
-			else if (e.keyCode==39)
-				$('#book').turn('next');
-	});
+}
+class Coin {
+	constructor(x, y, addCoin, coins) {
+		this.point = new Point(x, y);
+		this.c = document.createElement('div');
+		this.c.className = 'coin';
+		this.c.style.left = x + 'px';
+		this.c.style.top = y + 'px';
+		this.c.addEventListener('click', () => {
+			this.c.style.display = 'none';
+			var score = addCoin();
+			if(score % 5 === 0) {
+				coins.innerHTML = '';
+				createCoins();
+			}
+		})
+	}
+	getElement() {
+		return this.c; 
+	}
+}
+class Game {
+	constructor(scoreElem) {
+		this.score = 0;
+		this.scoreElem = scoreElem;
+
+	}
+	upScore() {
+		return () => {
+			this.score++;
+			this.scoreElem.innerHTML = this.score * 10;
+			return this.score;
+		};
+	}
+}
+function randInt(min, max) {
+  var rand = min + Math.random() * (max - min)
+  rand = Math.round(rand);
+  return rand;
+}
+
+
+var game = document.getElementById('game');
+var scoreElem = document.getElementById('score');
+var coinsElem = document.getElementById('coins');
+var gameObj = new Game(scoreElem);
+
+
+createCoins = () => {
+	for (var i = 0; i < 5; i++) {
+		var coin = new Coin(randInt(0, coinsElem.offsetWidth - 40), randInt(0, coinsElem.offsetHeight - 40), gameObj.upScore(), coins);
+		coinsElem.appendChild(coin.getElement());
+	}
+}
+
+createCoins();
+var initT = new Date()
+var timeElem = document.getElementById('time');
+var interval = setInterval(() => {
+	var t = (new Date(new Date() - initT)).getSeconds()
+	if((50 - t) === 0) {
+		clearInterval(interval);
+		coinsElem.innerHTML = '';
+	}
+	timeElem.innerHTML = 50 - t;
+});
