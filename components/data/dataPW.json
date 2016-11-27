@@ -1,0 +1,12 @@
+{
+    "dina": {
+        "link": "../../assets/dina/progulka/",
+        "data": ["1.jpeg","2.jpeg","3.jpeg","4.jpeg","5.jpeg","6.jpeg","7.jpeg"],
+        "index": "walk"
+    },
+    "alex": {
+        "link": "../../assets/alex/progulka/",
+        "data": ["1.jpeg", "2.jpeg"],
+         "index": "walk"
+    }
+}

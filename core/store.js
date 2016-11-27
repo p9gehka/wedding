@@ -9,7 +9,11 @@ const defaultState = {
     level: 0,
     prince: true,
     totalCoins: 0,
-    timeIsOver: false
+    timeIsOver: false,
+
+    alex: 0,
+    dina: 0,
+    selectedPhoto: []
 };
 
 function reducer(state = defaultState, action) {
@@ -32,6 +36,12 @@ function reducer(state = defaultState, action) {
         return {...state, timeIsOver: true, };
     case 'ADD_COINS': 
         return {...state, totalCoins: state.totalCoins + action.coins};
+    case 'SELECT_PHOTO': {
+        const s = {...state};
+        s[action.name]++;
+        s.selectedPhoto = [s.selectedPhoto, action.photo];
+        return {...s, totalCoins: s.totalCoins - 100 };
+    }
     default:
         return {...state };
     }
@@ -44,7 +54,3 @@ let store = createStore(reducer, applyMiddleware(
       freeze));
 
 export default store;
-
-        
-
-        

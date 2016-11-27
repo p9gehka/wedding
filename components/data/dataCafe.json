@@ -1,0 +1,12 @@
+{
+    "dina": {
+        "link": "../../assets/dina/banket/",
+        "data": ["1.jpeg","2.jpeg","3.jpeg"],
+        "index": "banket"
+    },
+    "alex": {
+        "link": "../../assets/alex/banket/",
+        "data": ["1.jpeg", "2.jpeg", "3.jpeg"],
+         "index": "banket"
+    }
+}

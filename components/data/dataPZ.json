@@ -1,0 +1,12 @@
+{
+    "dina": {
+        "link": "../../assets/dina/zags/",
+        "data": ["1.jpeg","2.jpeg","3.jpeg","4.jpeg","5.jpeg"],
+        "index": "zags"
+    },
+    "alex": {
+        "link": "../../assets/alex/zags/",
+        "data": ["1.jpeg"],
+         "index": "zags"
+    }
+}

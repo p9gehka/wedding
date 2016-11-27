@@ -1,9 +1,12 @@
 body {
 	font-size: small;
 	font-family: sans-serif;
-	  
+	
 }
 
+.selected {
+	opacity: 0.5;
+}
 /*
 .game {
 	width: 80%;
@@ -24,7 +27,7 @@ body {
 	padding: 0;
 	position: absolute;
 }
-.score {
+.score {!
 	position: absolute;
 	font-size: 3em;
 	color: #fff;

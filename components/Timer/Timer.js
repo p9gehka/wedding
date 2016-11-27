@@ -13,7 +13,6 @@ export default class Timer extends React.Component {
         };
     }
     componentDidMount() {
-        console.log('didMount');
         this.setState({
             intervalId: setInterval(this.timer.bind(this), 1000),
             timeStart: new Date()
@@ -35,7 +34,6 @@ export default class Timer extends React.Component {
         clearInterval(this.state.intervalId);
     }
     timer() {
-        console.log('timer run')
         this.setState({
             time: new Date() - this.state.timeStart,
         });
@@ -51,8 +49,8 @@ export default class Timer extends React.Component {
         const time = this.props.lvlTimer * 1000  - this.state.time;
         const timer = (time) / 1000;
         const percent = 100 / this.props.lvlTimer * timer;
-        return (<div style={tmWrap}>
-                    <Circle percent={100 -percent} strokeWidth="8" trailWidth="8" strokeColor="lime" />
+        return (<div style={tmWrap}> 
+                    <Circle percent={100 -percent} strokeWidth="8" trailColor="#FF8686" trailWidth="8" strokeColor="#37B9BF" />
                     <div style={timeSt}>
                         <div style={timeIn}>{numeral(timer).format('00:00').slice(3)}</div>
                     </div>

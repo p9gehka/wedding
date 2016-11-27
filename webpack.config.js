@@ -26,6 +26,10 @@ const config = {
                  path.resolve(__dirname, './core'),
                ],
             loader: `babel-loader?${JSON.stringify(babelConfig)}`,
+        },
+        {
+          test: /\.json$/,
+          loader: 'json-loader',
         }]
     },
     plugins: [

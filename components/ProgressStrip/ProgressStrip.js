@@ -6,7 +6,7 @@ export default (props) => {
 	const pointsCoord = [0, 100, 200, 300, 400, 500];
 
 	const points = pointsCoord.map((v, i)=>
-		<div key={`point_${i}`} style={{...point, left: v, borderColor:(i > lvl) ? 'grey' : 'lime'}}></div>
+		<div key={`point_${i}`} style={{...point, left: v, borderColor:(i > lvl) ? 'grey' : '#37B9BF'}}></div>
 	);
 	return (<div style={st}>
 		<div style={stripWrap}>

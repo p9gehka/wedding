@@ -16,7 +16,7 @@ export const stripWrap = {
 }
 export const selStripStyle = {
 	position: 'absolute',
-	background: 'lime',
+	background: '#37B9BF',
 	height: 5,
 	left: 0,
 	width: 0,

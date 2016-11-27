@@ -26,3 +26,11 @@ export const toRoom = () => dispatch => {
     dispatch(setTimer(false));
     dispatch(next);
 };
+
+export const selectPhoto = (name, photo) => {
+    return {
+        type: 'SELECT_PHOTO',
+        name,
+        photo
+    };
+};

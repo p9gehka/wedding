@@ -11,7 +11,7 @@ class CoinsScore extends React.Component {
             <div>
             {this.props.totalCoins}
             </div>
-            <div style={coin}></div>
+            <img style={coin}src="../../assets/coin_up.svg" />
         </div>);
     }
 }

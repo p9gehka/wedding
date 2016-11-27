@@ -3,7 +3,9 @@ export const tmWrap = {
 	height: 150,
 	top: 20,
 	left: 20,
-	position: 'absolute'
+	position: 'absolute',
+	background: 'rgba(255, 255, 255, .7)',
+	borderRadius: '50%'
 }
 export const timeSt = {
 	position: 'absolute',
@@ -17,5 +19,5 @@ export const timeIn = {
 	display: 'flex',
 	flexDirection: 'column',
 	justifyContent: 'center',
-	color: 'rgb(217, 217, 217)',
+	color: '#37B9BF',
 }
